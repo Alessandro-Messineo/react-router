@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ProductsCard from "./ProductsCard";
 
 export default function ProductsList() {
 
@@ -17,16 +18,13 @@ export default function ProductsList() {
 
     return (
         <div className="container-card">
-            {products.map((product) => (
-                <div className="products-card" key={product.id}>
-                    <div className="products-image">
-                        <img src={product.image} alt={product.title} />
-                    </div>
-                    <div className="products-info">
-                        <h2>{product.title}</h2>
-                        <p className="info">{product.price}</p>
-                    </div>
-                </div>
+            {products.map((product, index) => (
+                <ProductsCard 
+                key={index}
+                image = {product.image}
+                title = {product.title}
+                price = {product.price}
+                 />
             ))}
         </div>
     )
