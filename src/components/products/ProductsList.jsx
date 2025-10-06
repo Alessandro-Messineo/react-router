@@ -16,7 +16,7 @@ export default function ProductsList() {
     }, [])
 
     return (
-        <div className="container">
+        <div className="container-card">
             {products.map((product) => (
                 <div className="products-card" key={product.id}>
                     <div className="products-image">

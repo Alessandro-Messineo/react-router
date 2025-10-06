@@ -6,16 +6,16 @@ const links = [
     { path: '/prodotti', label: 'Prodotti' }
 ]
 
-export default function MainNavBar(){
-    return(
-         <nav>
-            <ul>
-                {links.map(link => (
-                    <li>
-                        <NavLink to={link.path}>{link.label}</NavLink>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+export default function MainNavBar() {
+    return (
+            <nav>
+                <ul>
+                    {links.map(link => (
+                        <li>
+                            <NavLink to={link.path}>{link.label}</NavLink>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
     )
 }

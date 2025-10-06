@@ -5,10 +5,15 @@ export default function NavbarLayout() {
     return (
         <>
             <header>
-                <MainNavBar />
+                <div className="bg-header">
+                    <MainNavBar />
+                </div>
             </header>
             <main>
-                <Outlet />
+                <div className="bg-main">
+                    <Outlet />
+                </div>
+
             </main>
         </>
     )
