@@ -111,3 +111,22 @@ h1 {
     margin-top: 50px;
   }
 }
+
+/* stile dettagli prodotti */
+.products-detail-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 40px auto;
+  cursor: pointer;
+  width: 20%;
+}
+
+.return-products {
+  text-align: center;
+  font-size: 25px;
+
+  p {
+    color: #007BFF;
+  }
+
+}

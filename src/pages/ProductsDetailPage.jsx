@@ -25,21 +25,22 @@ export default function ProductsDetailPage() {
         <>
             {products ?
                 (
-                    <div className="products-card">
-                        <div className="products-image">
-                            <img src={products.image} alt={products.title} />
-                        </div>
-                        <div className="products-info">
-                            <h2>{products.title}</h2>
-                            <p className="info">&euro;{products.price}</p>
-                            <div className="products-description">{products.description}</div>
+                    <>
+                        <div className="products-detail-card">
+                            <div className="products-image">
+                                <img src={products.image} alt={products.title} />
+                            </div>
+                            <div className="products-info">
+                                <h2>{products.title}</h2>
+                                <p className="info">&euro;{products.price}</p>
+                            </div>
                         </div>
                         <div className="return-products">
                             <Link to={`/prodotti`}>
                                 <p>Torna ai Prodotti</p>
                             </Link>
                         </div>
-                    </div>
+                    </>
                 )
                 :
                 (<p>caricamento...</p>)
