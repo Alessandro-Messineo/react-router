@@ -10,8 +10,8 @@ export default function MainNavBar() {
     return (
             <nav>
                 <ul>
-                    {links.map(link => (
-                        <li>
+                    {links.map((link, index) => (
+                        <li key={index}>
                             <NavLink to={link.path}>{link.label}</NavLink>
                         </li>
                     ))}

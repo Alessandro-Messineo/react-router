@@ -100,3 +100,14 @@ h1 {
   color: #007BFF;
   font-weight: bold;
 }
+
+/* sile pagina error */
+.error {
+  text-align: center;
+
+  h1 {
+    font-size: 100px;
+    color: red;
+    margin-top: 50px;
+  }
+}

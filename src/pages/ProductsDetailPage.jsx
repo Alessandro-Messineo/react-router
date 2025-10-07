@@ -1,37 +1,47 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 export default function ProductsDetailPage() {
 
     const { id } = useParams();
     const [products, setProducts] = useState();
-
-    function fetchProducts() {
-        axios.get(`https://fakestoreapi.com/products/${id}`)
-            .then((res) => setProducts(res.data))
-            .catch(error => console.log(error)
-            )
-    }
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetchProducts()
-    }, [id])
+        axios.get(`https://fakestoreapi.com/products/${id}`)
+            .then((res) =>
+                // {
+                //     if (!res.data || !res.data.id) {
+                //         navigate('/prodotti');
+                //     } else {
+                //         setProducts(res.data);
+                //     }
+                // }
+                setProducts(res.data))
+            .catch(() => { navigate('/prodotti') })
+    }, [id, navigate])
 
     return (
         <>
             {products ?
                 (
-                        <div className="products-card">
-                            <div className="products-image">
-                                <img src={products.image} alt={products.title} />
-                            </div>
-                            <div className="products-info">
-                                <h2>{products.title}</h2>
-                                <p className="info">{products.price}</p>
-                            </div>
+                    <div className="products-card">
+                        <div className="products-image">
+                            <img src={products.image} alt={products.title} />
                         </div>
-                ) 
-                : 
+                        <div className="products-info">
+                            <h2>{products.title}</h2>
+                            <p className="info">&euro;{products.price}</p>
+                            <div className="products-description">{products.description}</div>
+                        </div>
+                        <div className="return-products">
+                            <Link to={`/prodotti`}>
+                                <p>Torna ai Prodotti</p>
+                            </Link>
+                        </div>
+                    </div>
+                )
+                :
                 (<p>caricamento...</p>)
             }
         </>
