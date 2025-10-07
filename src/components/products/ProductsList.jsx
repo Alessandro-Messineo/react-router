@@ -24,6 +24,8 @@ export default function ProductsList() {
                 image = {product.image}
                 title = {product.title}
                 price = {product.price}
+                id = {product.id}
+                // product = {product}
                  />
             ))}
         </div>

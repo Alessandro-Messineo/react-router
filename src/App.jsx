@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProductsPage from "./pages/ProductsPage";
 import NavbarLayout from "./components/navbar/NavbarLayout";
+import ProductsDetailPage from "./pages/ProductsDetailPage";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/chi-siamo" element={<AboutPage />} />
             <Route path="/prodotti" element={<ProductsPage />} />
+            <Route path="/prodotti/:id" element={<ProductsDetailPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
